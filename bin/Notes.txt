@@ -1,0 +1,84 @@
+Classes are blueprint of creating object.
+* Classes can be organized into a logical groupings which we call as packages.
+* You can declare a package name in class using package statement.
+*
+Access Modifiers for class.
+A class is said to be a top level class if it is defined in source code file and not enclosed in code block of 
+another class, type or method.
+
+A top level class has only two valid access modifiers: public or none.
+public: public means any other class in any package can access this class. When the modifier is omitted,
+this has special meaning that the class is accessible only to classes in the same package.
+ 
+Public: public class means any other class in package in can access the class.
+protected: protected allows class access in same package, and any subclass in other packages, to have access to members.
+private: No other class can access this member. 
+ 
+Encapsulation: Encapsulation in OOPS usually has two meanings.
+1. Bundling of behavior and attributes on a single object.
+2. Practice of hiding fields and some methods from public access.
+ 
+Null: Null is a special keyword in Java, meaning, the variable or attribute has a type but no reference to an object.
+This means that no instance or object is assigned to the variable or field. Fields with primitive data types are never 
+null.
+Feilds on classes are assigned default values automatically by java, if you don't assign values yourself.
+boolean -> false,
+byte, short, int, long, char -> 0.
+double, float = 0.0.
+ 
+Getter and setters.
+Getter: A method on a class that retrieve the value of private field and return it.
+Setter: A setter is a method on a class that sets the value of a private field.
+The purpose of these methods is to control and protect access to private fields.
+ 
+This -> this is a special keyword in java. What it really refers to is the instance that was created when the object 
+was instantiated. 
+So, this is a special reference name for the object or instance, which it can use to describe itself.
+We can use this to access fields on the class.
+ 
+Encapsulation -> Not allowing people to access the field directly. We force them to go through a controlled way
+of setting up the data on the object. Using a setter method.
+  
+ Constructor: A constructor is a special type of code block that has specific name same as class and parameter,
+ much like a method. It does not return any value, not even void. You should specify an appropriate access modifier
+ to control who should be able to create new instances of the class, using this constructor.
+ We can set the values of fields using constructor and other initializations in class.
+ Firstly it turns out that the constructor is created for us implicitly, by Java. When I say things are implicit
+ that means we can not see the code in the source, but it is in the byte code, generated during compilation process.
+ when we say new Account() we are calling that implicit constructor, and that constructor is default constructor.
+ A class can have one or many constructors one of which can be a no-args constructor. 
+ 
+ Default Constructor: If a class contains no constructor then a default constructor is implicitly declared. This 
+ constructor has no parameter and often called no args(no argument) constructor. If a class contains any other 
+ constructor declarations, then a default constructor is NOT implicitly declared.
+ 
+ It is important to understand that constructor exist whether you explicitly declared or not.
+ 
+ Constructor Overloading: Constructor Overloading is declaring multiple constructors with different parameters. The number
+ of parameters can be different among constructor. Or if the number of parameters are same between two constructors,
+ their types or order must be different.
+  
+ Constructor Chaining: Process of calling one overloaded constructor from another. Constructor chaining is when one 
+ constructor explicitly calls another overloaded constructor. You can only use constructor chaining within constructors.
+ You must use a special statement this() to execute another constructor, passing it arguments if needed. and this() must be a
+ first executable statement if it is used from another constructor.
+  
+ Reference vs Object vs Instance vs Class:
+ Object and Instance are interchangeable terms.
+ Class: Blueprint for creating objects.
+ Reference: https://www.geeksforgeeks.org/reference-variable-in-java/
+ 
+ Static Variable: https://www.freecodecamp.org/news/static-variables-in-java/#:~:text=When%20a%20variable%20is%20declared,of%20the%20class%20are%20created.
+ Static methods: https://www.geeksforgeeks.org/difference-between-static-and-non-static-method-in-java/
+ POJO: Plain old java object is a class that generally only has instance fields.
+ It is used to house data and pass data between functional classes.
+ POJO: https://www.javatpoint.com/pojo-in-java
+  
+ Record type: Its purpose was to replace the boilerplate code of POJO but to be more restrictive. Java Calls them "plain data carriers".
+ 
+ --------------------------------------------------------------------------------------------------------------------------------------
+ Inheritance: It is a way to organize classes into a parent-child hierarchy, which lets the child inherit(reuse), fields and methods
+ from its parent.
+ Super: https://www.geeksforgeeks.org/super-keyword/
+ Super() is a way to call a constructor on the super class directly from the subclass constructor. this() and super() can never
+ be called from the same constructor.
